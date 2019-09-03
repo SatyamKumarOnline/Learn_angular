@@ -1,0 +1,52 @@
+<div class="top-menu">
+
+    <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<button (click)="EditCourseList()">Edit</button>
+
+<div class="courses" #container *ngIf="courses[1] as course">
+
+    <course-card [course]=course (courseSelected)=courseSelectedHandler($event)>
+
+        <div class="imgIcon" #ImageIcon>
+            <img #courseImg width="300" alt="Angular Logo" [src]='course.iconUrl'>
+            <h5>Total Lessons : 5 </h5>
+        </div>
+
+        <div class="course-description">
+            {{course.description}}
+        </div>
+
+        <!-- <course-image [course]=course></course-image>
+        <course-image [course]=courses[4]></course-image> -->
+        <!--<course-image [course]=courses[6]></course-image> -->
+
+
+
+    </course-card>
+
+
+
+    <!-- <course-card [course]=course (courseSelected)=courseSelectedHandler($event)>
+
+        <h5 #lessonHeading>Total Lessons : 10 </h5>
+
+    </course-card> -->
+
+
+    <!-- <course-card #cardRef1 [course]=courses[1] (courseSelected)=courseSelectedHandler($event)>
+    </course-card>
+
+    <course-card #cardRef2 [course]=courses[2] (courseSelected)=courseSelectedHandler($event)>
+    </course-card> -->
+
+
+    <!-- <course-card *ngFor='let course of courses; index as i; first as firstCourse; last as lastCourse' [course]=course [class.is-first]=firstCourse [class.is-last]=lastCourse (courseSelected)=courseSelectedHandler($event) [courseIndex]=i>
+    </course-card> -->
+
+    <!--<course-card [course]=intermediateCourseData (courseSelected)=courseSelectedHandler($event)></course-card>
+    <course-card [course]=beginnnersCourseData (courseSelected)=courseSelectedHandler($event)></course-card>
+    <course-card [course]=ngRXCourseData (courseSelected)=courseSelectedHandler($event)></course-card> -->
+</div>

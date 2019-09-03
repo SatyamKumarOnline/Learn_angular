@@ -1,0 +1,29 @@
+<ng-container *ngIf="course">
+    <div class="course-card">
+
+        <div class="course-title">
+            {{courseIndex + " " +course.description}}
+        </div>
+
+        <ng-template #blankImage>
+            <p class='warn'>
+
+                {{course.description}} Image not available
+            </p>
+        </ng-template>
+
+
+        <ng-content select=".imgIcon" *ngIf="course.iconUrl else blankImage"></ng-content>
+        <ng-content select=".course-description"></ng-content>
+
+
+
+
+
+        <ng-template #noImageInfo> No image present </ng-template>
+
+
+
+        <button (click)="viewCourse()">View Course</button>
+    </div>
+</ng-container>
